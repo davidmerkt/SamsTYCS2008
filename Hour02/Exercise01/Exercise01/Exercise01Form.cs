@@ -13,6 +13,7 @@ namespace Exercise01
         public Exercise01Form()
         {
             InitializeComponent();
+            this.btnClose.Location = new System.Drawing.Point((this.Width/2 - btnClose.Width/2), this.Height/2 - btnClose.Height);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

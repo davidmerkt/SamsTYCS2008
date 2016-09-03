@@ -33,7 +33,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 0;
