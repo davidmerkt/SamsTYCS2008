@@ -29,5 +29,27 @@ namespace PictureViewer
         {
             this.Close();
         }
+
+        private void btnEnlarge_Click(object sender, EventArgs e)
+        {
+            this.Width += 20;
+            this.Height += 20;
+        }
+
+        private void btnShrink_Click(object sender, EventArgs e)
+        {
+            this.Width -= 20;
+            this.Height -= 20;
+        }
+
+        private void btnDrawBorder_Click(object sender, EventArgs e)
+        {
+            Graphics objGraphics = this.CreateGraphics();
+            objGraphics.Clear(SystemColors.Control);
+            objGraphics.DrawRectangle(Pens.Blue,
+                picShowPicture.Left - 1, picShowPicture.Top - 1,
+                picShowPicture.Width + 1, picShowPicture.Height + 1);
+            objGraphics.Dispose();
+        }
     }
 }
