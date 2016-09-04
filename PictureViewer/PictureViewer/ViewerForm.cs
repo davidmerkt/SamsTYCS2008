@@ -69,5 +69,11 @@ namespace PictureViewer
             lblX.Text = "";
             lblY.Text = "";
         }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            OptionsForm frmOptionsDialog = new OptionsForm();
+            frmOptionsDialog.ShowDialog();
+        }
     }
 }

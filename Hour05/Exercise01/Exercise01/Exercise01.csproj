@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{507DE6C4-721D-4123-B522-F659D7420C9A}</ProjectGuid>
+    <ProjectGuid>{7BEC29F4-7C90-486A-A02A-042824E83F28}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PictureViewer</RootNamespace>
-    <AssemblyName>PictureViewer</AssemblyName>
+    <RootNamespace>Exercise01</RootNamespace>
+    <AssemblyName>Exercise01</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,25 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OptionsForm.cs">
+    <Compile Include="Exercise01Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionsForm.Designer.cs">
-      <DependentUpon>OptionsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewerForm.Designer.cs">
-      <DependentUpon>ViewerForm.cs</DependentUpon>
+    <Compile Include="Exercise01Form.Designer.cs">
+      <DependentUpon>Exercise01Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="OptionsForm.resx">
-      <DependentUpon>OptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewerForm.resx">
-      <DependentUpon>ViewerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Exercise01Form.resx">
+      <DependentUpon>Exercise01Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
