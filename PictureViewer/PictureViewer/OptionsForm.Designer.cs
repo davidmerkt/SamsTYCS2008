@@ -38,7 +38,13 @@
             this.grpDefaultBackcolor = new System.Windows.Forms.GroupBox();
             this.optBackgroundWhite = new System.Windows.Forms.RadioButton();
             this.optBackgroundDefault = new System.Windows.Forms.RadioButton();
+            this.tabOptions = new System.Windows.Forms.TabControl();
+            this.pgeGeneral = new System.Windows.Forms.TabPage();
+            this.pgeAppearance = new System.Windows.Forms.TabPage();
             this.grpDefaultBackcolor.SuspendLayout();
+            this.tabOptions.SuspendLayout();
+            this.pgeGeneral.SuspendLayout();
+            this.pgeAppearance.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOK
@@ -53,7 +59,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(109, 43);
+            this.txtUserName.Location = new System.Drawing.Point(96, 41);
             this.txtUserName.MaxLength = 0;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(139, 20);
@@ -81,7 +87,7 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(40, 46);
+            this.lblUserName.Location = new System.Drawing.Point(27, 44);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(63, 13);
             this.lblUserName.TabIndex = 5;
@@ -90,7 +96,7 @@
             // chkPromptOnExit
             // 
             this.chkPromptOnExit.AutoSize = true;
-            this.chkPromptOnExit.Location = new System.Drawing.Point(109, 69);
+            this.chkPromptOnExit.Location = new System.Drawing.Point(96, 67);
             this.chkPromptOnExit.Name = "chkPromptOnExit";
             this.chkPromptOnExit.Size = new System.Drawing.Size(142, 17);
             this.chkPromptOnExit.TabIndex = 2;
@@ -101,7 +107,7 @@
             // 
             this.grpDefaultBackcolor.Controls.Add(this.optBackgroundWhite);
             this.grpDefaultBackcolor.Controls.Add(this.optBackgroundDefault);
-            this.grpDefaultBackcolor.Location = new System.Drawing.Point(109, 92);
+            this.grpDefaultBackcolor.Location = new System.Drawing.Point(37, 27);
             this.grpDefaultBackcolor.Name = "grpDefaultBackcolor";
             this.grpDefaultBackcolor.Size = new System.Drawing.Size(200, 72);
             this.grpDefaultBackcolor.TabIndex = 1;
@@ -130,6 +136,40 @@
             this.optBackgroundDefault.Text = "Default Grey";
             this.optBackgroundDefault.UseVisualStyleBackColor = true;
             // 
+            // tabOptions
+            // 
+            this.tabOptions.Controls.Add(this.pgeGeneral);
+            this.tabOptions.Controls.Add(this.pgeAppearance);
+            this.tabOptions.Location = new System.Drawing.Point(12, 12);
+            this.tabOptions.Name = "tabOptions";
+            this.tabOptions.SelectedIndex = 0;
+            this.tabOptions.Size = new System.Drawing.Size(280, 145);
+            this.tabOptions.TabIndex = 7;
+            // 
+            // pgeGeneral
+            // 
+            this.pgeGeneral.Controls.Add(this.lblUserName);
+            this.pgeGeneral.Controls.Add(this.chkPromptOnExit);
+            this.pgeGeneral.Controls.Add(this.txtUserName);
+            this.pgeGeneral.Location = new System.Drawing.Point(4, 22);
+            this.pgeGeneral.Name = "pgeGeneral";
+            this.pgeGeneral.Padding = new System.Windows.Forms.Padding(3);
+            this.pgeGeneral.Size = new System.Drawing.Size(272, 119);
+            this.pgeGeneral.TabIndex = 0;
+            this.pgeGeneral.Text = "General";
+            this.pgeGeneral.UseVisualStyleBackColor = true;
+            // 
+            // pgeAppearance
+            // 
+            this.pgeAppearance.Controls.Add(this.grpDefaultBackcolor);
+            this.pgeAppearance.Location = new System.Drawing.Point(4, 22);
+            this.pgeAppearance.Name = "pgeAppearance";
+            this.pgeAppearance.Padding = new System.Windows.Forms.Padding(3);
+            this.pgeAppearance.Size = new System.Drawing.Size(272, 119);
+            this.pgeAppearance.TabIndex = 1;
+            this.pgeAppearance.Text = "Appearance";
+            this.pgeAppearance.UseVisualStyleBackColor = true;
+            // 
             // OptionsForm
             // 
             this.AcceptButton = this.btnOK;
@@ -139,12 +179,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(384, 261);
-            this.Controls.Add(this.grpDefaultBackcolor);
-            this.Controls.Add(this.chkPromptOnExit);
-            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.tabOptions);
             this.Controls.Add(this.lstPinkFloydAlbums);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -157,8 +194,11 @@
             this.Text = "Picture Viewer Options";
             this.grpDefaultBackcolor.ResumeLayout(false);
             this.grpDefaultBackcolor.PerformLayout();
+            this.tabOptions.ResumeLayout(false);
+            this.pgeGeneral.ResumeLayout(false);
+            this.pgeGeneral.PerformLayout();
+            this.pgeAppearance.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -173,5 +213,8 @@
         private System.Windows.Forms.GroupBox grpDefaultBackcolor;
         private System.Windows.Forms.RadioButton optBackgroundWhite;
         private System.Windows.Forms.RadioButton optBackgroundDefault;
+        private System.Windows.Forms.TabControl tabOptions;
+        private System.Windows.Forms.TabPage pgeGeneral;
+        private System.Windows.Forms.TabPage pgeAppearance;
     }
 }
