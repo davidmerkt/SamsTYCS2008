@@ -75,5 +75,25 @@ namespace PictureViewer
             OptionsForm frmOptionsDialog = new OptionsForm();
             frmOptionsDialog.ShowDialog();
         }
+
+        private void mnuOpenPicture_Click(object sender, EventArgs e)
+        {
+            if (ofdSelectPicture.ShowDialog() == DialogResult.OK)
+            {
+                picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
+                this.Text = string.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
+                ofdSelectPicture.FileName = "";
+            }
+        }
+
+        private void mnuConfirmOnExit_Click(object sender, EventArgs e)
+        {
+            mnuConfirmOnExit.Checked = !(mnuConfirmOnExit.Checked);
+        }
+
+        private void mnuQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
