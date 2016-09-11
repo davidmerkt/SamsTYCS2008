@@ -30,62 +30,39 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewerForm));
-            this.btnSelectPicture = new System.Windows.Forms.Button();
-            this.btnQuit = new System.Windows.Forms.Button();
             this.picShowPicture = new System.Windows.Forms.PictureBox();
+            this.mnuPictureContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.drawBorderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdSelectPicture = new System.Windows.Forms.OpenFileDialog();
             this.btnEnlarge = new System.Windows.Forms.Button();
             this.btnShrink = new System.Windows.Forms.Button();
-            this.btnDrawBorder = new System.Windows.Forms.Button();
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
-            this.btnOptions = new System.Windows.Forms.Button();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOpenPicture = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConfirmOnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDrawBorder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuConfirmOnExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPictureContext = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.drawBorderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbrMainToolbar = new System.Windows.Forms.ToolStrip();
             this.tbbOpenPicture = new System.Windows.Forms.ToolStripButton();
-            this.tbbDrawBorder = new System.Windows.Forms.ToolStripButton();
-            this.tbbOptions = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbbDrawBorder = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbbOptions = new System.Windows.Forms.ToolStripButton();
             this.sbrMyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tbbEnlarge = new System.Windows.Forms.ToolStripButton();
+            this.tbbShrink = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).BeginInit();
-            this.mnuMainMenu.SuspendLayout();
             this.mnuPictureContext.SuspendLayout();
+            this.mnuMainMenu.SuspendLayout();
             this.tbrMainToolbar.SuspendLayout();
             this.sbrMyStatusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnSelectPicture
-            // 
-            this.btnSelectPicture.Location = new System.Drawing.Point(12, 52);
-            this.btnSelectPicture.Name = "btnSelectPicture";
-            this.btnSelectPicture.Size = new System.Drawing.Size(85, 23);
-            this.btnSelectPicture.TabIndex = 0;
-            this.btnSelectPicture.Text = "Select Picture";
-            this.btnSelectPicture.UseVisualStyleBackColor = true;
-            this.btnSelectPicture.Click += new System.EventHandler(this.btnSelectPicture_Click);
-            // 
-            // btnQuit
-            // 
-            this.btnQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuit.Location = new System.Drawing.Point(537, 52);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(75, 23);
-            this.btnQuit.TabIndex = 1;
-            this.btnQuit.Text = "Quit";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // picShowPicture
             // 
@@ -102,6 +79,20 @@
             this.picShowPicture.MouseLeave += new System.EventHandler(this.picShowPicture_MouseLeave);
             this.picShowPicture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picShowPicture_MouseMove);
             // 
+            // mnuPictureContext
+            // 
+            this.mnuPictureContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.drawBorderToolStripMenuItem});
+            this.mnuPictureContext.Name = "mnuPictureContext";
+            this.mnuPictureContext.Size = new System.Drawing.Size(140, 26);
+            // 
+            // drawBorderToolStripMenuItem
+            // 
+            this.drawBorderToolStripMenuItem.Name = "drawBorderToolStripMenuItem";
+            this.drawBorderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.drawBorderToolStripMenuItem.Text = "Draw Border";
+            this.drawBorderToolStripMenuItem.Click += new System.EventHandler(this.mnuDrawBorder_Click);
+            // 
             // ofdSelectPicture
             // 
             this.ofdSelectPicture.Filter = "Bitmaps|*.BMP|JPEG Images|*.JPG; *.JPEG|GIF Images|*.GIF|PNG Images|*.PNG|TIFF Im" +
@@ -110,7 +101,7 @@
             // 
             // btnEnlarge
             // 
-            this.btnEnlarge.Location = new System.Drawing.Point(103, 52);
+            this.btnEnlarge.Location = new System.Drawing.Point(12, 52);
             this.btnEnlarge.Name = "btnEnlarge";
             this.btnEnlarge.Size = new System.Drawing.Size(23, 23);
             this.btnEnlarge.TabIndex = 6;
@@ -120,7 +111,7 @@
             // 
             // btnShrink
             // 
-            this.btnShrink.Location = new System.Drawing.Point(132, 52);
+            this.btnShrink.Location = new System.Drawing.Point(41, 52);
             this.btnShrink.Name = "btnShrink";
             this.btnShrink.Size = new System.Drawing.Size(23, 23);
             this.btnShrink.TabIndex = 7;
@@ -128,20 +119,10 @@
             this.btnShrink.UseVisualStyleBackColor = true;
             this.btnShrink.Click += new System.EventHandler(this.btnShrink_Click);
             // 
-            // btnDrawBorder
-            // 
-            this.btnDrawBorder.Location = new System.Drawing.Point(161, 52);
-            this.btnDrawBorder.Name = "btnDrawBorder";
-            this.btnDrawBorder.Size = new System.Drawing.Size(85, 23);
-            this.btnDrawBorder.TabIndex = 2;
-            this.btnDrawBorder.Text = "Draw Border";
-            this.btnDrawBorder.UseVisualStyleBackColor = true;
-            this.btnDrawBorder.Click += new System.EventHandler(this.btnDrawBorder_Click);
-            // 
             // lblX
             // 
             this.lblX.AutoSize = true;
-            this.lblX.Location = new System.Drawing.Point(252, 57);
+            this.lblX.Location = new System.Drawing.Point(90, 57);
             this.lblX.Name = "lblX";
             this.lblX.Size = new System.Drawing.Size(17, 13);
             this.lblX.TabIndex = 3;
@@ -150,22 +131,11 @@
             // lblY
             // 
             this.lblY.AutoSize = true;
-            this.lblY.Location = new System.Drawing.Point(330, 57);
+            this.lblY.Location = new System.Drawing.Point(180, 57);
             this.lblY.Name = "lblY";
             this.lblY.Size = new System.Drawing.Size(17, 13);
             this.lblY.TabIndex = 4;
             this.lblY.Text = "Y:";
-            // 
-            // btnOptions
-            // 
-            this.btnOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOptions.Location = new System.Drawing.Point(456, 52);
-            this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(75, 23);
-            this.btnOptions.TabIndex = 5;
-            this.btnOptions.Text = "Options";
-            this.btnOptions.UseVisualStyleBackColor = true;
-            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // mnuMainMenu
             // 
@@ -188,6 +158,31 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // mnuOpenPicture
+            // 
+            this.mnuOpenPicture.Name = "mnuOpenPicture";
+            this.mnuOpenPicture.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.mnuOpenPicture.Size = new System.Drawing.Size(186, 22);
+            this.mnuOpenPicture.Text = "&Open Picture";
+            this.mnuOpenPicture.Click += new System.EventHandler(this.mnuOpenPicture_Click);
+            // 
+            // mnuConfirmOnExit
+            // 
+            this.mnuConfirmOnExit.Checked = true;
+            this.mnuConfirmOnExit.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mnuConfirmOnExit.Name = "mnuConfirmOnExit";
+            this.mnuConfirmOnExit.Size = new System.Drawing.Size(186, 22);
+            this.mnuConfirmOnExit.Text = "Confirm on Exit";
+            this.mnuConfirmOnExit.Click += new System.EventHandler(this.mnuConfirmOnExit_Click);
+            // 
+            // mnuQuit
+            // 
+            this.mnuQuit.Name = "mnuQuit";
+            this.mnuQuit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.mnuQuit.Size = new System.Drawing.Size(186, 22);
+            this.mnuQuit.Text = "&Quit";
+            this.mnuQuit.Click += new System.EventHandler(this.mnuQuit_Click);
+            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -198,28 +193,12 @@
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
-            // mnuOpenPicture
-            // 
-            this.mnuOpenPicture.Name = "mnuOpenPicture";
-            this.mnuOpenPicture.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.mnuOpenPicture.Size = new System.Drawing.Size(186, 22);
-            this.mnuOpenPicture.Text = "&Open Picture";
-            this.mnuOpenPicture.Click += new System.EventHandler(this.mnuOpenPicture_Click);
-            // 
-            // mnuQuit
-            // 
-            this.mnuQuit.Name = "mnuQuit";
-            this.mnuQuit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.mnuQuit.Size = new System.Drawing.Size(186, 22);
-            this.mnuQuit.Text = "&Quit";
-            this.mnuQuit.Click += new System.EventHandler(this.mnuQuit_Click);
-            // 
             // mnuDrawBorder
             // 
             this.mnuDrawBorder.Name = "mnuDrawBorder";
             this.mnuDrawBorder.Size = new System.Drawing.Size(152, 22);
             this.mnuDrawBorder.Text = "&Draw Border";
-            this.mnuDrawBorder.Click += new System.EventHandler(this.btnDrawBorder_Click);
+            this.mnuDrawBorder.Click += new System.EventHandler(this.mnuDrawBorder_Click);
             // 
             // toolStripSeparator1
             // 
@@ -231,30 +210,7 @@
             this.mnuOptions.Name = "mnuOptions";
             this.mnuOptions.Size = new System.Drawing.Size(152, 22);
             this.mnuOptions.Text = "&Options";
-            this.mnuOptions.Click += new System.EventHandler(this.btnOptions_Click);
-            // 
-            // mnuConfirmOnExit
-            // 
-            this.mnuConfirmOnExit.Checked = true;
-            this.mnuConfirmOnExit.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.mnuConfirmOnExit.Name = "mnuConfirmOnExit";
-            this.mnuConfirmOnExit.Size = new System.Drawing.Size(186, 22);
-            this.mnuConfirmOnExit.Text = "Confirm on Exit";
-            this.mnuConfirmOnExit.Click += new System.EventHandler(this.mnuConfirmOnExit_Click);
-            // 
-            // mnuPictureContext
-            // 
-            this.mnuPictureContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.drawBorderToolStripMenuItem});
-            this.mnuPictureContext.Name = "mnuPictureContext";
-            this.mnuPictureContext.Size = new System.Drawing.Size(140, 26);
-            // 
-            // drawBorderToolStripMenuItem
-            // 
-            this.drawBorderToolStripMenuItem.Name = "drawBorderToolStripMenuItem";
-            this.drawBorderToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.drawBorderToolStripMenuItem.Text = "Draw Border";
-            this.drawBorderToolStripMenuItem.Click += new System.EventHandler(this.btnDrawBorder_Click);
+            this.mnuOptions.Click += new System.EventHandler(this.mnuOptions_Click);
             // 
             // tbrMainToolbar
             // 
@@ -263,6 +219,8 @@
             this.toolStripSeparator2,
             this.tbbDrawBorder,
             this.toolStripSeparator3,
+            this.tbbEnlarge,
+            this.tbbShrink,
             this.tbbOptions});
             this.tbrMainToolbar.Location = new System.Drawing.Point(0, 24);
             this.tbrMainToolbar.Name = "tbrMainToolbar";
@@ -278,7 +236,12 @@
             this.tbbOpenPicture.Name = "tbbOpenPicture";
             this.tbbOpenPicture.Size = new System.Drawing.Size(23, 22);
             this.tbbOpenPicture.Text = "Open Picture";
-            this.tbbOpenPicture.Click += new System.EventHandler(this.btnSelectPicture_Click);
+            this.tbbOpenPicture.Click += new System.EventHandler(this.tbbOpenPicture_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tbbDrawBorder
             // 
@@ -288,27 +251,23 @@
             this.tbbDrawBorder.Name = "tbbDrawBorder";
             this.tbbDrawBorder.Size = new System.Drawing.Size(23, 22);
             this.tbbDrawBorder.Text = "Draw Border";
-            this.tbbDrawBorder.Click += new System.EventHandler(this.btnDrawBorder_Click);
+            this.tbbDrawBorder.Click += new System.EventHandler(this.tbbDrawBorder_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // tbbOptions
             // 
+            this.tbbOptions.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tbbOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tbbOptions.Image = ((System.Drawing.Image)(resources.GetObject("tbbOptions.Image")));
             this.tbbOptions.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.tbbOptions.Name = "tbbOptions";
             this.tbbOptions.Size = new System.Drawing.Size(23, 22);
             this.tbbOptions.Text = "Options";
-            this.tbbOptions.Click += new System.EventHandler(this.btnOptions_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.tbbOptions.Click += new System.EventHandler(this.tbbOptions_Click);
             // 
             // sbrMyStatusStrip
             // 
@@ -326,21 +285,37 @@
             this.lblStatus.Size = new System.Drawing.Size(98, 17);
             this.lblStatus.Text = "No image loaded";
             // 
+            // tbbEnlarge
+            // 
+            this.tbbEnlarge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbEnlarge.Image = ((System.Drawing.Image)(resources.GetObject("tbbEnlarge.Image")));
+            this.tbbEnlarge.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbEnlarge.Name = "tbbEnlarge";
+            this.tbbEnlarge.Size = new System.Drawing.Size(23, 22);
+            this.tbbEnlarge.Text = "Enlarge Window";
+            this.tbbEnlarge.Click += new System.EventHandler(this.tbbEnlarge_Click);
+            // 
+            // tbbShrink
+            // 
+            this.tbbShrink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbShrink.Image = ((System.Drawing.Image)(resources.GetObject("tbbShrink.Image")));
+            this.tbbShrink.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbShrink.Name = "tbbShrink";
+            this.tbbShrink.Size = new System.Drawing.Size(23, 22);
+            this.tbbShrink.Text = "Shrink Window";
+            this.tbbShrink.Click += new System.EventHandler(this.tbbShrink_Click);
+            // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(624, 361);
-            this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.lblY);
             this.Controls.Add(this.lblX);
-            this.Controls.Add(this.btnDrawBorder);
             this.Controls.Add(this.btnShrink);
             this.Controls.Add(this.btnEnlarge);
             this.Controls.Add(this.picShowPicture);
-            this.Controls.Add(this.btnSelectPicture);
             this.Controls.Add(this.tbrMainToolbar);
             this.Controls.Add(this.mnuMainMenu);
             this.Controls.Add(this.sbrMyStatusStrip);
@@ -351,9 +326,9 @@
             this.Text = "Picture Viewer";
             this.Load += new System.EventHandler(this.ViewerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).EndInit();
+            this.mnuPictureContext.ResumeLayout(false);
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
-            this.mnuPictureContext.ResumeLayout(false);
             this.tbrMainToolbar.ResumeLayout(false);
             this.tbrMainToolbar.PerformLayout();
             this.sbrMyStatusStrip.ResumeLayout(false);
@@ -364,17 +339,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSelectPicture;
-        private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.PictureBox picShowPicture;
         private System.Windows.Forms.OpenFileDialog ofdSelectPicture;
         private System.Windows.Forms.Button btnEnlarge;
         private System.Windows.Forms.Button btnShrink;
-        private System.Windows.Forms.Button btnDrawBorder;
         private System.Windows.Forms.Label lblX;
         private System.Windows.Forms.Label lblY;
-        private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.MenuStrip mnuMainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuOpenPicture;
@@ -394,6 +364,8 @@
         private System.Windows.Forms.ToolStripButton tbbOptions;
         private System.Windows.Forms.StatusStrip sbrMyStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.ToolStripButton tbbEnlarge;
+        private System.Windows.Forms.ToolStripButton tbbShrink;
     }
 }
 

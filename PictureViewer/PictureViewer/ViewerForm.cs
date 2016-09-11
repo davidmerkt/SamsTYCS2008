@@ -21,21 +21,6 @@ namespace PictureViewer
             lblY.Text = "";
         }
 
-        private void btnSelectPicture_Click(object sender, EventArgs e)
-        {
-            if (ofdSelectPicture.ShowDialog() == DialogResult.OK)
-            {
-                picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
-                this.Text = String.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
-                ofdSelectPicture.FileName = "";
-            }
-        }
-
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnEnlarge_Click(object sender, EventArgs e)
         {
             this.Width += 20;
@@ -46,16 +31,6 @@ namespace PictureViewer
         {
             this.Width -= 20;
             this.Height -= 20;
-        }
-
-        private void btnDrawBorder_Click(object sender, EventArgs e)
-        {
-            Graphics objGraphics = this.CreateGraphics();
-            objGraphics.Clear(SystemColors.Control);
-            objGraphics.DrawRectangle(Pens.Blue,
-                picShowPicture.Left - 1, picShowPicture.Top - 1,
-                picShowPicture.Width + 1, picShowPicture.Height + 1);
-            objGraphics.Dispose();
         }
 
         private void picShowPicture_MouseMove(object sender, MouseEventArgs e)
@@ -70,20 +45,9 @@ namespace PictureViewer
             lblY.Text = "";
         }
 
-        private void btnOptions_Click(object sender, EventArgs e)
-        {
-            OptionsForm frmOptionsDialog = new OptionsForm();
-            frmOptionsDialog.ShowDialog();
-        }
-
         private void mnuOpenPicture_Click(object sender, EventArgs e)
         {
-            if (ofdSelectPicture.ShowDialog() == DialogResult.OK)
-            {
-                picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
-                this.Text = string.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
-                ofdSelectPicture.FileName = "";
-            }
+            OpenPicture();
         }
 
         private void mnuConfirmOnExit_Click(object sender, EventArgs e)
@@ -94,6 +58,68 @@ namespace PictureViewer
         private void mnuQuit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void mnuDrawBorder_Click(object sender, EventArgs e)
+        {
+            DrawBorder(picShowPicture);
+        }
+
+        private void mnuOptions_Click(object sender, EventArgs e)
+        {
+            Options();
+        }
+
+        private void tbbOpenPicture_Click(object sender, EventArgs e)
+        {
+            OpenPicture();
+        }
+
+        private void tbbDrawBorder_Click(object sender, EventArgs e)
+        {
+            DrawBorder(picShowPicture);
+        }
+
+        private void tbbOptions_Click(object sender, EventArgs e)
+        {
+            Options();
+        }
+
+        private void tbbEnlarge_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbbShrink_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenPicture()
+        {
+            if (ofdSelectPicture.ShowDialog() == DialogResult.OK)
+            {
+                picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
+                this.Text = string.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
+                sbrMyStatusStrip.Items[0].Text = ofdSelectPicture.FileName;
+                ofdSelectPicture.FileName = "";
+            }
+        }
+
+        private void DrawBorder(PictureBox objPicturebox)
+        {
+            Graphics objGraphics = this.CreateGraphics();
+            objGraphics.Clear(SystemColors.Control);
+            objGraphics.DrawRectangle(Pens.Blue,
+                objPicturebox.Left - 1, objPicturebox.Top - 1,
+                objPicturebox.Width + 1, objPicturebox.Height + 1);
+            objGraphics.Dispose();
+        }
+
+        private void Options()
+        {
+            OptionsForm frmOptionsDialog = new OptionsForm();
+            frmOptionsDialog.ShowDialog();
         }
     }
 }

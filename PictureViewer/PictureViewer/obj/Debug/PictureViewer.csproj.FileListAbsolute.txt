@@ -6,3 +6,4 @@ C:\Users\dmerkt\Documents\Visual Studio 2015\Projects\SamsTYCS2008\PictureViewer
 C:\Users\dmerkt\Documents\Visual Studio 2015\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.exe
 C:\Users\dmerkt\Documents\Visual Studio 2015\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.pdb
 C:\Users\dmerkt\Documents\Visual Studio 2015\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.OptionsForm.resources
+C:\Users\dmerkt\Documents\Visual Studio 2015\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.csprojResolveAssemblyReference.cache
