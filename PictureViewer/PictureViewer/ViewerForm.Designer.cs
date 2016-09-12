@@ -52,11 +52,11 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbbDrawBorder = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbbEnlarge = new System.Windows.Forms.ToolStripButton();
+            this.tbbShrink = new System.Windows.Forms.ToolStripButton();
             this.tbbOptions = new System.Windows.Forms.ToolStripButton();
             this.sbrMyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tbbEnlarge = new System.Windows.Forms.ToolStripButton();
-            this.tbbShrink = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).BeginInit();
             this.mnuPictureContext.SuspendLayout();
             this.mnuMainMenu.SuspendLayout();
@@ -196,19 +196,19 @@
             // mnuDrawBorder
             // 
             this.mnuDrawBorder.Name = "mnuDrawBorder";
-            this.mnuDrawBorder.Size = new System.Drawing.Size(152, 22);
+            this.mnuDrawBorder.Size = new System.Drawing.Size(139, 22);
             this.mnuDrawBorder.Text = "&Draw Border";
             this.mnuDrawBorder.Click += new System.EventHandler(this.mnuDrawBorder_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
             // 
             // mnuOptions
             // 
             this.mnuOptions.Name = "mnuOptions";
-            this.mnuOptions.Size = new System.Drawing.Size(152, 22);
+            this.mnuOptions.Size = new System.Drawing.Size(139, 22);
             this.mnuOptions.Text = "&Options";
             this.mnuOptions.Click += new System.EventHandler(this.mnuOptions_Click);
             // 
@@ -258,6 +258,26 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
+            // tbbEnlarge
+            // 
+            this.tbbEnlarge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbEnlarge.Image = ((System.Drawing.Image)(resources.GetObject("tbbEnlarge.Image")));
+            this.tbbEnlarge.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbEnlarge.Name = "tbbEnlarge";
+            this.tbbEnlarge.Size = new System.Drawing.Size(23, 22);
+            this.tbbEnlarge.Text = "Enlarge Window";
+            this.tbbEnlarge.Click += new System.EventHandler(this.tbbEnlarge_Click);
+            // 
+            // tbbShrink
+            // 
+            this.tbbShrink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbShrink.Image = ((System.Drawing.Image)(resources.GetObject("tbbShrink.Image")));
+            this.tbbShrink.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbShrink.Name = "tbbShrink";
+            this.tbbShrink.Size = new System.Drawing.Size(23, 22);
+            this.tbbShrink.Text = "Shrink Window";
+            this.tbbShrink.Click += new System.EventHandler(this.tbbShrink_Click);
+            // 
             // tbbOptions
             // 
             this.tbbOptions.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -285,26 +305,6 @@
             this.lblStatus.Size = new System.Drawing.Size(98, 17);
             this.lblStatus.Text = "No image loaded";
             // 
-            // tbbEnlarge
-            // 
-            this.tbbEnlarge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbEnlarge.Image = ((System.Drawing.Image)(resources.GetObject("tbbEnlarge.Image")));
-            this.tbbEnlarge.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbEnlarge.Name = "tbbEnlarge";
-            this.tbbEnlarge.Size = new System.Drawing.Size(23, 22);
-            this.tbbEnlarge.Text = "Enlarge Window";
-            this.tbbEnlarge.Click += new System.EventHandler(this.tbbEnlarge_Click);
-            // 
-            // tbbShrink
-            // 
-            this.tbbShrink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbShrink.Image = ((System.Drawing.Image)(resources.GetObject("tbbShrink.Image")));
-            this.tbbShrink.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbShrink.Name = "tbbShrink";
-            this.tbbShrink.Size = new System.Drawing.Size(23, 22);
-            this.tbbShrink.Text = "Shrink Window";
-            this.tbbShrink.Click += new System.EventHandler(this.tbbShrink_Click);
-            // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +324,7 @@
             this.MinimumSize = new System.Drawing.Size(450, 140);
             this.Name = "ViewerForm";
             this.Text = "Picture Viewer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewerForm_FormClosing);
             this.Load += new System.EventHandler(this.ViewerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).EndInit();
             this.mnuPictureContext.ResumeLayout(false);

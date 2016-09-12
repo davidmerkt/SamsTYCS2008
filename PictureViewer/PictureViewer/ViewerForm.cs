@@ -10,6 +10,11 @@ namespace PictureViewer
 {
     public partial class ViewerForm : Form
     {
+        const bool c_defPromptOnExit = false;
+        string m_strUserName = "";
+        bool m_blnPromptOnExit = c_defPromptOnExit;
+        Color m_objPictureBackColor;
+
         public ViewerForm()
         {
             InitializeComponent();
@@ -19,6 +24,10 @@ namespace PictureViewer
         {
             lblX.Text = "";
             lblY.Text = "";
+            m_blnPromptOnExit = c_defPromptOnExit;
+            m_objPictureBackColor = System.Drawing.SystemColors.Control;
+            picShowPicture.BackColor = m_objPictureBackColor;
+            mnuConfirmOnExit.Checked = m_blnPromptOnExit;
         }
 
         private void btnEnlarge_Click(object sender, EventArgs e)
@@ -53,6 +62,7 @@ namespace PictureViewer
         private void mnuConfirmOnExit_Click(object sender, EventArgs e)
         {
             mnuConfirmOnExit.Checked = !(mnuConfirmOnExit.Checked);
+            m_blnPromptOnExit = mnuConfirmOnExit.Checked;
         }
 
         private void mnuQuit_Click(object sender, EventArgs e)
@@ -120,6 +130,17 @@ namespace PictureViewer
         {
             OptionsForm frmOptionsDialog = new OptionsForm();
             frmOptionsDialog.ShowDialog();
+        }
+
+        private void ViewerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (m_blnPromptOnExit)
+            {
+                if(MessageBox.Show("Close the Picture Viewer program?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
