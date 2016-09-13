@@ -21,15 +21,7 @@ namespace Exercise02
         {
             string Birthday = txtBirthdateEntry.Text;
 
-            int FirstSpaceLocation = Birthday.IndexOf("/", 0);
-            int SecondSpaceLocation = Birthday.IndexOf("/", FirstSpaceLocation + 1);
-
-            string Month = Birthday.Substring(0, FirstSpaceLocation);
-            string Day = Birthday.Substring(FirstSpaceLocation + 1, SecondSpaceLocation - FirstSpaceLocation - 1);
-            string Year = Birthday.Substring(SecondSpaceLocation + 1, Birthday.Length - SecondSpaceLocation - 1);
-            
-
-            DateTime BirthdayP = new DateTime( int.Parse(Year), int.Parse(Month), int.Parse(Day));
+            DateTime BirthdayP = Convert.ToDateTime(Birthday);
 
             MessageBox.Show("The day of birth is: " + BirthdayP.DayOfWeek);
         }
