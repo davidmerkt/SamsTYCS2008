@@ -1,6 +1,6 @@
-﻿namespace Example02
+﻿namespace Exercise02
 {
-    partial class Example02Form
+    partial class Exercise02Form
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,6 @@
             // 
             // lblLabelToResize
             // 
-            this.lblLabelToResize.AutoSize = false;
             this.lblLabelToResize.BackColor = System.Drawing.Color.Red;
             this.lblLabelToResize.Location = new System.Drawing.Point(13, 42);
             this.lblLabelToResize.Name = "lblLabelToResize";
@@ -52,7 +51,7 @@
             this.lblLabelToResize.TabIndex = 2;
             this.lblLabelToResize.Text = "Label To Resize";
             // 
-            // Example02Form
+            // Exercise02Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -61,10 +60,9 @@
             this.Controls.Add(this.btnResize);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Example02Form";
-            this.Text = "Hour 14 Example 2";
+            this.Name = "Exercise02Form";
+            this.Text = "Hour 14 Exercise 2";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

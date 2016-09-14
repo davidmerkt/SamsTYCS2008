@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Example02
+namespace Exercise02
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace Example02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Example02Form());
+            Application.Run(new Exercise02Form());
         }
     }
 }

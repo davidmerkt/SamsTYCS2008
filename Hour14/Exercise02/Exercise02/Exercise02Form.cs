@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Example02
+namespace Exercise02
 {
-    public partial class Example02Form : Form
+    public partial class Exercise02Form : Form
     {
-        public Example02Form()
+        public Exercise02Form()
         {
             InitializeComponent();
         }
