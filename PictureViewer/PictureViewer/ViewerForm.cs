@@ -107,13 +107,21 @@ namespace PictureViewer
 
         private void OpenPicture()
         {
-            if (ofdSelectPicture.ShowDialog() == DialogResult.OK)
+            try
             {
-                picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
-                this.Text = string.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
-                sbrMyStatusStrip.Items[0].Text = ofdSelectPicture.FileName;
-                ofdSelectPicture.FileName = "";
+                if (ofdSelectPicture.ShowDialog() == DialogResult.OK)
+                {
+                    picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
+                    this.Text = string.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
+                    sbrMyStatusStrip.Items[0].Text = ofdSelectPicture.FileName; 
+                }
             }
+            catch (System.OutOfMemoryException)
+            {
+                MessageBox.Show("The file you have chosen is not an image file.", "Invalid File", MessageBoxButtons.OK);
+            }
+
+            ofdSelectPicture.FileName = ""; 
         }
 
         private void DrawBorder(PictureBox objPicturebox)
@@ -141,6 +149,11 @@ namespace PictureViewer
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void ViewerForm_Resize(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }
