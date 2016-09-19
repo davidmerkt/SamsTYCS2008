@@ -121,7 +121,7 @@ namespace PictureViewer
                 MessageBox.Show("The file you have chosen is not an image file.", "Invalid File", MessageBoxButtons.OK);
             }
 
-            ofdSelectPicture.FileName = ""; 
+            //ofdSelectPicture.FileName = ""; 
         }
 
         private void DrawBorder(PictureBox objPicturebox)
@@ -154,6 +154,58 @@ namespace PictureViewer
         private void ViewerForm_Resize(object sender, EventArgs e)
         {
             this.Refresh();
+        }
+
+        private void tbbGetFileAttributes_Click(object sender, EventArgs e)
+        {
+            if ((ofdSelectPicture.FileName) == "") 
+            { 
+                MessageBox.Show("There is no file open");
+                return;
+            }
+
+            System.Text.StringBuilder stbProperties = new System.Text.StringBuilder("");
+            System.IO.FileAttributes fileAttributes;
+
+            stbProperties.Append("Created: ");
+            stbProperties.Append(System.IO.File.GetCreationTime(ofdSelectPicture.FileName));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Accessed: ");
+            stbProperties.Append(System.IO.File.GetLastAccessTime(ofdSelectPicture.FileName));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Modified: ");
+            stbProperties.Append(System.IO.File.GetLastWriteTime(ofdSelectPicture.FileName));
+            stbProperties.Append("\r\n");
+
+            fileAttributes = System.IO.File.GetAttributes(ofdSelectPicture.FileName);
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Normal: ");
+            stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.Normal) == System.IO.FileAttributes.Normal));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Hidden: ");
+            stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.Hidden) == System.IO.FileAttributes.Hidden));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Read-Only: ");
+            stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.ReadOnly) == System.IO.FileAttributes.ReadOnly));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("System: ");
+            stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.System) == System.IO.FileAttributes.System));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Temp File: ");
+            stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.Temporary) == System.IO.FileAttributes.Temporary));
+            stbProperties.Append("\r\n");
+
+            stbProperties.Append("Archive: ");
+            stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.Archive) == System.IO.FileAttributes.Archive));
+
+            MessageBox.Show(stbProperties.ToString());
         }
     }
 }

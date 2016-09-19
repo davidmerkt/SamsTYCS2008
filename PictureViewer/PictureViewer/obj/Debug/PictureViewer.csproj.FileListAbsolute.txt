@@ -15,3 +15,4 @@ C:\Users\dmerkt.EVOLUTION1\Documents\Visual Studio 2013\Projects\SamsTYCS2008\Pi
 C:\Users\dmerkt.EVOLUTION1\Documents\Visual Studio 2013\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.ViewerForm.resources
 C:\Users\dmerkt.EVOLUTION1\Documents\Visual Studio 2013\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.Properties.Resources.resources
 C:\Users\dmerkt.EVOLUTION1\Documents\Visual Studio 2013\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.csproj.GenerateResource.Cache
+C:\Users\dmerkt.EVOLUTION1\Documents\Visual Studio 2013\Projects\SamsTYCS2008\PictureViewer\PictureViewer\obj\Debug\PictureViewer.csprojResolveAssemblyReference.cache

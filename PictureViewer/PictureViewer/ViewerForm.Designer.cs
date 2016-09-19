@@ -57,6 +57,7 @@
             this.tbbOptions = new System.Windows.Forms.ToolStripButton();
             this.sbrMyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tbbGetFileAttributes = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.picShowPicture)).BeginInit();
             this.mnuPictureContext.SuspendLayout();
             this.mnuMainMenu.SuspendLayout();
@@ -72,7 +73,7 @@
             this.picShowPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picShowPicture.ContextMenuStrip = this.mnuPictureContext;
             this.picShowPicture.Location = new System.Drawing.Point(16, 100);
-            this.picShowPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picShowPicture.Margin = new System.Windows.Forms.Padding(4);
             this.picShowPicture.Name = "picShowPicture";
             this.picShowPicture.Size = new System.Drawing.Size(799, 313);
             this.picShowPicture.TabIndex = 2;
@@ -104,7 +105,7 @@
             // btnEnlarge
             // 
             this.btnEnlarge.Location = new System.Drawing.Point(16, 64);
-            this.btnEnlarge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnlarge.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnlarge.Name = "btnEnlarge";
             this.btnEnlarge.Size = new System.Drawing.Size(31, 28);
             this.btnEnlarge.TabIndex = 6;
@@ -115,7 +116,7 @@
             // btnShrink
             // 
             this.btnShrink.Location = new System.Drawing.Point(55, 64);
-            this.btnShrink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShrink.Margin = new System.Windows.Forms.Padding(4);
             this.btnShrink.Name = "btnShrink";
             this.btnShrink.Size = new System.Drawing.Size(31, 28);
             this.btnShrink.TabIndex = 7;
@@ -230,7 +231,8 @@
             this.toolStripSeparator3,
             this.tbbEnlarge,
             this.tbbShrink,
-            this.tbbOptions});
+            this.tbbOptions,
+            this.tbbGetFileAttributes});
             this.tbrMainToolbar.Location = new System.Drawing.Point(0, 28);
             this.tbrMainToolbar.Name = "tbrMainToolbar";
             this.tbrMainToolbar.Size = new System.Drawing.Size(832, 27);
@@ -316,6 +318,17 @@
             this.lblStatus.Size = new System.Drawing.Size(126, 20);
             this.lblStatus.Text = "No image loaded";
             // 
+            // tbbGetFileAttributes
+            // 
+            this.tbbGetFileAttributes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbGetFileAttributes.Image = ((System.Drawing.Image)(resources.GetObject("tbbGetFileAttributes.Image")));
+            this.tbbGetFileAttributes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbGetFileAttributes.Name = "tbbGetFileAttributes";
+            this.tbbGetFileAttributes.Size = new System.Drawing.Size(24, 24);
+            this.tbbGetFileAttributes.Text = "Get File Attributes";
+            this.tbbGetFileAttributes.ToolTipText = "Get File Attributes";
+            this.tbbGetFileAttributes.Click += new System.EventHandler(this.tbbGetFileAttributes_Click);
+            // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,7 +345,7 @@
             this.Controls.Add(this.sbrMyStatusStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(594, 161);
             this.Name = "ViewerForm";
             this.Text = "Picture Viewer";
@@ -380,6 +393,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripButton tbbEnlarge;
         private System.Windows.Forms.ToolStripButton tbbShrink;
+        private System.Windows.Forms.ToolStripButton tbbGetFileAttributes;
     }
 }
 
