@@ -49,9 +49,10 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(297, 12);
+            this.btnOK.Location = new System.Drawing.Point(396, 15);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(100, 28);
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -59,18 +60,20 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(96, 41);
+            this.txtUserName.Location = new System.Drawing.Point(128, 50);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.MaxLength = 0;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(139, 20);
+            this.txtUserName.Size = new System.Drawing.Size(184, 22);
             this.txtUserName.TabIndex = 0;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(297, 41);
+            this.btnCancel.Location = new System.Drawing.Point(396, 50);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -79,26 +82,30 @@
             // lstPinkFloydAlbums
             // 
             this.lstPinkFloydAlbums.FormattingEnabled = true;
-            this.lstPinkFloydAlbums.Location = new System.Drawing.Point(144, 180);
+            this.lstPinkFloydAlbums.ItemHeight = 16;
+            this.lstPinkFloydAlbums.Location = new System.Drawing.Point(192, 222);
+            this.lstPinkFloydAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstPinkFloydAlbums.Name = "lstPinkFloydAlbums";
-            this.lstPinkFloydAlbums.Size = new System.Drawing.Size(228, 69);
+            this.lstPinkFloydAlbums.Size = new System.Drawing.Size(303, 84);
             this.lstPinkFloydAlbums.TabIndex = 6;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(27, 44);
+            this.lblUserName.Location = new System.Drawing.Point(36, 54);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(63, 13);
+            this.lblUserName.Size = new System.Drawing.Size(83, 17);
             this.lblUserName.TabIndex = 5;
             this.lblUserName.Text = "User Name:";
             // 
             // chkPromptOnExit
             // 
             this.chkPromptOnExit.AutoSize = true;
-            this.chkPromptOnExit.Location = new System.Drawing.Point(96, 67);
+            this.chkPromptOnExit.Location = new System.Drawing.Point(128, 82);
+            this.chkPromptOnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkPromptOnExit.Name = "chkPromptOnExit";
-            this.chkPromptOnExit.Size = new System.Drawing.Size(142, 17);
+            this.chkPromptOnExit.Size = new System.Drawing.Size(186, 21);
             this.chkPromptOnExit.TabIndex = 2;
             this.chkPromptOnExit.Text = "Prompt to confirm on exit";
             this.chkPromptOnExit.UseVisualStyleBackColor = true;
@@ -107,9 +114,11 @@
             // 
             this.grpDefaultBackcolor.Controls.Add(this.optBackgroundWhite);
             this.grpDefaultBackcolor.Controls.Add(this.optBackgroundDefault);
-            this.grpDefaultBackcolor.Location = new System.Drawing.Point(37, 27);
+            this.grpDefaultBackcolor.Location = new System.Drawing.Point(49, 33);
+            this.grpDefaultBackcolor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpDefaultBackcolor.Name = "grpDefaultBackcolor";
-            this.grpDefaultBackcolor.Size = new System.Drawing.Size(200, 72);
+            this.grpDefaultBackcolor.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDefaultBackcolor.Size = new System.Drawing.Size(267, 89);
             this.grpDefaultBackcolor.TabIndex = 1;
             this.grpDefaultBackcolor.TabStop = false;
             this.grpDefaultBackcolor.Text = "Default Picture Background Color";
@@ -117,9 +126,10 @@
             // optBackgroundWhite
             // 
             this.optBackgroundWhite.AutoSize = true;
-            this.optBackgroundWhite.Location = new System.Drawing.Point(14, 42);
+            this.optBackgroundWhite.Location = new System.Drawing.Point(19, 52);
+            this.optBackgroundWhite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.optBackgroundWhite.Name = "optBackgroundWhite";
-            this.optBackgroundWhite.Size = new System.Drawing.Size(53, 17);
+            this.optBackgroundWhite.Size = new System.Drawing.Size(65, 21);
             this.optBackgroundWhite.TabIndex = 1;
             this.optBackgroundWhite.Text = "White";
             this.optBackgroundWhite.UseVisualStyleBackColor = true;
@@ -128,9 +138,10 @@
             // 
             this.optBackgroundDefault.AutoSize = true;
             this.optBackgroundDefault.Checked = true;
-            this.optBackgroundDefault.Location = new System.Drawing.Point(14, 19);
+            this.optBackgroundDefault.Location = new System.Drawing.Point(19, 23);
+            this.optBackgroundDefault.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.optBackgroundDefault.Name = "optBackgroundDefault";
-            this.optBackgroundDefault.Size = new System.Drawing.Size(84, 17);
+            this.optBackgroundDefault.Size = new System.Drawing.Size(109, 21);
             this.optBackgroundDefault.TabIndex = 0;
             this.optBackgroundDefault.TabStop = true;
             this.optBackgroundDefault.Text = "Default Grey";
@@ -140,10 +151,11 @@
             // 
             this.tabOptions.Controls.Add(this.pgeGeneral);
             this.tabOptions.Controls.Add(this.pgeAppearance);
-            this.tabOptions.Location = new System.Drawing.Point(12, 12);
+            this.tabOptions.Location = new System.Drawing.Point(16, 15);
+            this.tabOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabOptions.Name = "tabOptions";
             this.tabOptions.SelectedIndex = 0;
-            this.tabOptions.Size = new System.Drawing.Size(280, 145);
+            this.tabOptions.Size = new System.Drawing.Size(373, 178);
             this.tabOptions.TabIndex = 7;
             // 
             // pgeGeneral
@@ -151,10 +163,11 @@
             this.pgeGeneral.Controls.Add(this.lblUserName);
             this.pgeGeneral.Controls.Add(this.chkPromptOnExit);
             this.pgeGeneral.Controls.Add(this.txtUserName);
-            this.pgeGeneral.Location = new System.Drawing.Point(4, 22);
+            this.pgeGeneral.Location = new System.Drawing.Point(4, 25);
+            this.pgeGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pgeGeneral.Name = "pgeGeneral";
-            this.pgeGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.pgeGeneral.Size = new System.Drawing.Size(272, 119);
+            this.pgeGeneral.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgeGeneral.Size = new System.Drawing.Size(365, 149);
             this.pgeGeneral.TabIndex = 0;
             this.pgeGeneral.Text = "General";
             this.pgeGeneral.UseVisualStyleBackColor = true;
@@ -162,10 +175,11 @@
             // pgeAppearance
             // 
             this.pgeAppearance.Controls.Add(this.grpDefaultBackcolor);
-            this.pgeAppearance.Location = new System.Drawing.Point(4, 22);
+            this.pgeAppearance.Location = new System.Drawing.Point(4, 25);
+            this.pgeAppearance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pgeAppearance.Name = "pgeAppearance";
-            this.pgeAppearance.Padding = new System.Windows.Forms.Padding(3);
-            this.pgeAppearance.Size = new System.Drawing.Size(272, 119);
+            this.pgeAppearance.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgeAppearance.Size = new System.Drawing.Size(365, 149);
             this.pgeAppearance.TabIndex = 1;
             this.pgeAppearance.Text = "Appearance";
             this.pgeAppearance.UseVisualStyleBackColor = true;
@@ -173,25 +187,27 @@
             // OptionsForm
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.ClientSize = new System.Drawing.Size(509, 311);
             this.Controls.Add(this.tabOptions);
             this.Controls.Add(this.lstPinkFloydAlbums);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(400, 300);
+            this.MaximumSize = new System.Drawing.Size(527, 358);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(400, 300);
+            this.MinimumSize = new System.Drawing.Size(527, 358);
             this.Name = "OptionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Picture Viewer Options";
+            this.Load += new System.EventHandler(this.OptionsForm_Load);
             this.grpDefaultBackcolor.ResumeLayout(false);
             this.grpDefaultBackcolor.PerformLayout();
             this.tabOptions.ResumeLayout(false);

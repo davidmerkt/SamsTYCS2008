@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace PictureViewer
 {
@@ -24,22 +25,17 @@ namespace PictureViewer
         {
             lblX.Text = "";
             lblY.Text = "";
-            m_blnPromptOnExit = c_defPromptOnExit;
-            m_objPictureBackColor = System.Drawing.SystemColors.Control;
+            LoadDefaults();
+        }
+
+        private void LoadDefaults()
+        {
+            m_blnPromptOnExit = Convert.ToBoolean(Registry.GetValue(@"HKEY_CURRENT_USER\Software\CleverSoftware\PictureViewer\", "PromptOnExit", "false"));
+            if (Convert.ToString(Registry.GetValue(@"HKEY_CURRENT_USER\Software\CleverSoftware\PictureViewer\", "BackColor", "Gray")) == "Gray")
+                m_objPictureBackColor = System.Drawing.SystemColors.Control;
+            else m_objPictureBackColor = System.Drawing.Color.White;
             picShowPicture.BackColor = m_objPictureBackColor;
             mnuConfirmOnExit.Checked = m_blnPromptOnExit;
-        }
-
-        private void btnEnlarge_Click(object sender, EventArgs e)
-        {
-            this.Width += 20;
-            this.Height += 20;
-        }
-
-        private void btnShrink_Click(object sender, EventArgs e)
-        {
-            this.Width -= 20;
-            this.Height -= 20;
         }
 
         private void picShowPicture_MouseMove(object sender, MouseEventArgs e)
@@ -63,6 +59,8 @@ namespace PictureViewer
         {
             mnuConfirmOnExit.Checked = !(mnuConfirmOnExit.Checked);
             m_blnPromptOnExit = mnuConfirmOnExit.Checked;
+            
+            Registry.SetValue(@"HKEY_CURRENT_USER\Software\CleverSoftware\PictureViewer\", "PromptOnExit", mnuConfirmOnExit.Checked);
         }
 
         private void mnuQuit_Click(object sender, EventArgs e)
@@ -78,6 +76,7 @@ namespace PictureViewer
         private void mnuOptions_Click(object sender, EventArgs e)
         {
             Options();
+            LoadDefaults();
         }
 
         private void tbbOpenPicture_Click(object sender, EventArgs e)
@@ -93,16 +92,19 @@ namespace PictureViewer
         private void tbbOptions_Click(object sender, EventArgs e)
         {
             Options();
+            LoadDefaults();
         }
 
         private void tbbEnlarge_Click(object sender, EventArgs e)
         {
-
+            this.Width += 20;
+            this.Height += 20;
         }
 
         private void tbbShrink_Click(object sender, EventArgs e)
         {
-
+            this.Width -= 20;
+            this.Height -= 20;
         }
 
         private void OpenPicture()
@@ -113,7 +115,8 @@ namespace PictureViewer
                 {
                     picShowPicture.Image = Image.FromFile(ofdSelectPicture.FileName);
                     this.Text = string.Concat("Picture Viewer (" + ofdSelectPicture.FileName + ")");
-                    sbrMyStatusStrip.Items[0].Text = ofdSelectPicture.FileName; 
+                    sbrMyStatusStrip.Items[0].Text = ofdSelectPicture.FileName;
+                    UpdateLog(ofdSelectPicture.FileName);
                 }
             }
             catch (System.OutOfMemoryException)
@@ -122,6 +125,14 @@ namespace PictureViewer
             }
 
             //ofdSelectPicture.FileName = ""; 
+        }
+
+        private void UpdateLog(string strFileName)
+        {
+            System.IO.StreamWriter objFile = new System.IO.StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + @"\PictureLog.txt", true);
+            objFile.WriteLine(DateTime.Now + " " + strFileName);
+            objFile.Close();
+            objFile.Dispose();
         }
 
         private void DrawBorder(PictureBox objPicturebox)
@@ -158,8 +169,13 @@ namespace PictureViewer
 
         private void tbbGetFileAttributes_Click(object sender, EventArgs e)
         {
-            if ((ofdSelectPicture.FileName) == "") 
-            { 
+            GetFileAttributes();
+        }
+
+        private void GetFileAttributes()
+        {
+            if ((ofdSelectPicture.FileName) == "")
+            {
                 MessageBox.Show("There is no file open");
                 return;
             }
@@ -206,6 +222,27 @@ namespace PictureViewer
             stbProperties.Append(Convert.ToBoolean((fileAttributes & System.IO.FileAttributes.Archive) == System.IO.FileAttributes.Archive));
 
             MessageBox.Show(stbProperties.ToString());
+        }
+
+        private void ShowLog()
+        {
+            LogViewerForm objLog = new LogViewerForm();
+            objLog.ShowDialog();
+        }
+
+        private void tbbShowLog_Click(object sender, EventArgs e)
+        {
+            ShowLog();
+        }
+
+        private void viewPictureLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowLog();
+        }
+
+        private void getFileAttributesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetFileAttributes();
         }
     }
 }
